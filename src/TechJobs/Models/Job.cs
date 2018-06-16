@@ -1,4 +1,8 @@
-﻿namespace TechJobs.Models
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
+namespace TechJobs.Models
+
 {
     public class Job
     {
@@ -8,7 +12,11 @@
         public string Name { get; set; }
         public Employer Employer { get; set; }
         public Location Location { get; set; }
+
+        [Column("Skill")]
         public CoreCompetency CoreCompetency { get; set; }
+
+        [Column("Position")]
         public PositionType PositionType { get; set; }
 
         public Job()
